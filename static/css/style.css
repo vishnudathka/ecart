@@ -1,0 +1,28 @@
+/* html,
+body,
+main {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(214, 210, 236);
+} */
+.bg-nav {
+  background-color:#111;;
+}
+.h1 {
+  height: 60px;
+}
+img{
+    height: 28px;
+    margin: 7px;
+    margin-top: 12px; 
+    
+  
+}
+.bg_text{
+    color:red;
+}
+
+
+

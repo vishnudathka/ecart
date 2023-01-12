@@ -1,12 +1,12 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic as views
 
-def index(request):
-    html = """
-    <h1>Hello World</h1>
-    <p>This is a http response from django.</p>
-    """
-    return HttpResponse(html)
+
+class HomeView(views.TemplateView):
+    template_name="core/home.html"
+
+
+class AboutView (views.TemplateView):
+    template_name="core/about.html"   
 # Create your views here.
  
 

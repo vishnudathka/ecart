@@ -1,4 +1,6 @@
 from django.db import models
+from django.conf import settings
+USER = settings.AUTH_USER_MODEL
 
 
 class UnitModel(models.Model):
@@ -34,4 +36,38 @@ class ProductModel(models.Model):
     status = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.name 
+        return self.name
+
+
+class StockModel(models.Model):
+    product = models.ForeignKey(ProductModel, on_delete=models.CASCADE)
+    quantity = models.FloatField()
+    status = models.BooleanField(default=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.product)
+
+
+class CartModel(models.Model):
+    user = models.ForeignKey(USER, on_delete=models.CASCADE)
+    is_checked_out = models.BooleanField(default=False)
+    status = models.BooleanField(default=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.user)
+
+
+class CartItemModel(models.Model):
+    product = models.ForeignKey(ProductModel, on_delete=models.CASCADE)
+    cart = models.ForeignKey(CartModel, on_delete=models.CASCADE)
+    quantiti = models.FloatField()
+    status = models.BooleanField(default=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.product)
