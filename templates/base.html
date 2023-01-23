@@ -9,8 +9,9 @@
     {% include "includes/style.html" %}
 </head>
 <body>
-    {% block content %}{% endblock %}
     {% include "includes/navbar.html" %}
+    {% block content %}{% endblock %}
+    {% include "includes/footer.html" %}
     {% include "includes/script.html" %}    
 </body>
 </html>

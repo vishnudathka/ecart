@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Product List</h1>
+    </div>
+  </div>
+  <div class="row row-cols-lg-4 row-cols-1 g-3">
+    {% for product in products %}
+    <div class="col">
+      <div class="card">
+        {% for image in product.images.all %}
+        <img
+          height="200px"
+          width="200px"
+          src="{{image.path.url}}"
+          class="card-img-top"
+        />
+        {% endfor %}
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">INR{{product.price}}</p>
+          <p class="card-text">{{product.description}}</p>
+          <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
+            <a href="#" class="btn btn-primary">Add to Cart</a>
+            <a href="{% url 'core:product_detail' product.id %}" class="btn btn-secondary">Views Details</a>
+            <a href="{% url 'core:product_delete' product.id %}" class="btn btn-secondary">Delete</a>
+            <a href="{% url 'core:product_update' product.id %}" class="btn btn-secondary">update</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
