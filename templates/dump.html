@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg-6">
+        <img
+          src="{% static 'img/cycle.webp' %}"
+          alt="Responsive image"
+          class="mt-4 img1 img-fluid"
+        />
+      </div>
+      <div class="col-lg-5 text-center">
+        <h2 class="h2">
+          Urban Terrain BOLT UT5000S26 Steel MTB-Disc Brakes, Free Installation &
+          OneFitPlus App Tracking 26 T Road Cycle (Single Speed, Green)
+        </h2>
+        <p class="text-center">
+          Urban Terrain Bolt UT5000S26 Mountain Bike is the best in the class bike
+          for ultimate riding experience. It is made of high quality, very strong
+          and light steel to maximize durability, performance, and smooth ride.
+          Wheel size of 26 inches and best in class disc brakes makes it ideal for
+          riding in all conditions. Premium Alloy Disc brakes in both front and
+          rear wheels provide maximum safety. The cycle will be delivered in 85%
+          assembled condition. You can easily assemble the cycle with the Tool kit
+          and Air Pump provided in the Packaging. Ensure periodic maintenance for
+          better cycling experience. In case of returns, the customer needs to
+          keep intact the original packaging to ensure delivery-pickup.
+        </p>
+        <h4 class="text-center">Sales start on 14th january 2023</h4>
+        <button class="btn btn-primary main">Order Now</button>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col">
+        <h2 class="h1">Popular products</h2>
+        <hr />
+      </div>
+  
+      <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1 g-3 mb-3">
+        {% for product in products %}
+        <div class="col">
+          <div class="card product-item">
+            {% with image=product.images.first %}
+            <img
+              src="{{image.path.url}}"
+              alt="Product Image"
+              class="card-img-top"
+              style="width: 100; object-fit: scale-down; background-color: white;"
+            />
+            {% endwith %}
+            <div class="card-body d-flex flex-column gap-1">
+              <h6 class="card-text">{{product.name}}</h6>
+              <div class="rating text-warning">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                <span class="text-dark">(4.5 out 5)</span>
+              </div>
+              <p class="card-text">{{product.description}}</p>
+              <h4 class="card-text fw-bold text-center">
+                Price: {{product.price}}
+              </h4>
+              <div
+                class="d-flex flex-column align-items-center justify-content-center gap-3"
+              >
+                <a class="btn btn-primary" href="#">Buy Now</a>
+                <a class="btn btn-secondary" href="#">Add to cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% empty %}
+        <div class="card card-body">
+          <h5 class="card-title">No products found!</h5>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,45 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col mt-4">
+      <form action="" method="post">
+        {% csrf_token %}
+        
+        <div>
+          <ul>
+    
+          
+        {% for review in reviews %}
+        <li>
+    
+          {{review}}
+          
+         <div class="col-6">
+          <div class="card">
+            {% for image in review.images.all %}
+            <img
+          height="200px"
+          width="200px"
+          src="{{image.path.url}}"
+          class="card-img-top"
+          style="width: 100; object-fit: scale-down; background-color: white"
+        />
+        {{review.comment}}
+        {{review.rating}}
+        {% endfor %}
+          </div>
+         </div>
+          
+        </li>
+        
+      {% empty %}
+      <li>No review found!</li> 
+      {% endfor %}
+    </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

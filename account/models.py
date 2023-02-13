@@ -48,7 +48,7 @@ class ProfileModel(models.Model):
     age = models.IntegerField()
     gender = models.CharField(max_length=3, choices=GenderChoices.choices)
     addresses = models.ManyToManyField(AddressModel,blank=True)
-    image = models.ImageField(upload_to="accont/profile/image", default="default/user.jpg")
+    image = models.ImageField(upload_to="accounts/profile/image/", default="default/user.jpg")
     phone = models.CharField(max_length=15)
     user = models.OneToOneField(USER, on_delete=models.CASCADE)
     status = models.BooleanField(default=True)
@@ -59,4 +59,4 @@ class ProfileModel(models.Model):
         return f"{self.first_name} {self.last_name}"
     
     def get_absolute_url(self): 
-        return reverse("account:profile_detail",args=(self.id))     
+        return reverse("account:profile_detail",args=(self.id,))     

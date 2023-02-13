@@ -5,11 +5,11 @@ main {
   width: 100%;
   padding: 0;
   margin: 0;
-  background-color: #fff3f3;
+  background-color: #FFFFFF;
 }
 
 nav {
-  background-color: #ff4f4f;
+  background-color: #D9D9D9;
   height: 72px;
 }
 
@@ -18,7 +18,7 @@ nav {
 }
 
 .product-item{
-  background-color: #ffc2c2;
+  background-color: #73796D;
   border-radius: 0;
   height: 500px;
   overflow: hidden;
@@ -51,7 +51,7 @@ nav {
   background-color: #802828;
 }
 
-.main--btn{
+.main-btn{
   border: none;
   border-radius: 0;
   color: white;
@@ -59,7 +59,181 @@ nav {
   font-size: 18px;
   padding: 8px 16px;
 }
-.card-margin{
-  margin-top: 35%;
-  margin-left: 50%;
+
+/* Login Page */
+.django-form-login input{
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  
 }
+
+.forgot_password{
+  text-decoration:none;
+  
+} 
+
+.button-login-2 button{
+border-radius: 20px;
+width: 200px;
+}
+
+.button-login-1 button{
+  border-style: none;
+  border-radius: 20px;
+  margin: 13px;
+}
+.logo-text{
+  margin: -10px;
+}
+
+/* password_reset_form */
+
+
+.django-form-reset input{
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  
+}
+
+
+.button-reset-1 .button-reset-1a{
+  border-radius: 20px;
+}
+.button-reset-1 .button-reset-1b{
+  border-radius: 20px;
+  width: 80px;
+}
+
+/* password_reset_confirm */
+
+.django-form-confirm input{
+  width: 90%;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.button-confirm-1 .button-confirm-1a{
+  border-radius: 20px;
+}
+.button-confirm-1 .button-confirm-1b{
+  border-radius: 20px;
+  width: 80px;
+}
+
+/* home */
+
+.bg-image{
+  height: calc(100vh - 72px);
+  background-image:url(../../media/default/jacek-dylag-jo8C9bt3uo8-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.content{
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.496);
+}
+.button-group-home button{
+  border-radius: 10px;
+}
+
+/* Product_list */
+.search-p{
+  width: 88%;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.p-head-1 .s-button{
+height: 50px;
+border-radius: 15px;
+
+}
+
+.p-head-2 .f-button{
+  border-radius: 10px;
+  border-style: none;
+  background-color: #D9D9D9;
+  height: 30PX;
+  width: 80px;
+
+}
+
+.cart-body ,.cart,.buy{
+  border-radius: 15px;
+}
+
+.product_list .card{
+  background-color: #D9D9D9;
+  height: 600px;
+}
+
+.product_list .card{
+overflow: hidden;
+border-radius: 20px;
+}
+.product_list .card .card-title {
+  text-decoration: none;
+  color: black;
+  }
+.product_list .card .card-text-1{
+    color:black;
+  }
+  @media only screen and (max-width: 600px) {
+   .p-head-1{
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .p-head-2{
+       display: none;
+     }
+   }
+   
+ /* Product_detail */
+  .button-group-detail-a a{
+  border-radius: 15px;
+  text-decoration: none;
+ }
+ .detail_comment .card{
+  background-color: #D9D9D9;
+  border-radius: 20px;
+ }
+ .detail_comment .card button{
+  border-radius: 15px;
+ }
+ .product_detail_container{
+  height: calc(100vh - 72px);
+ }
+ .button-group-detail-b a {
+  border-radius: 10px;
+  background-color: #D9D9D9;
+  color:rgba(34, 34, 34, 0.8);
+  text-decoration: none;
+ }
+
+ /* Wishlist_list */
+.label{
+  background-color: rgba(217, 217, 217, 0.5);
+  border-radius: 10px;
+}
+
+.c-box{
+  background-color: rgba(217, 217, 217, 0.5);
+  border-color: rgba(33, 33, 33, 1)
+}
+
+.wishlist_list{
+  height: calc(100vh-72px);
+}
+form .bg_wishlist{
+  border-radius: 10px;
+  background-color: rgba(217, 217, 217, 1);
+  border-width: 1px;
+  border-color: rgba(34, 34, 34, 0.8);
+  color: rgba(34, 34, 34, 0.8)
+  ;
+}
+
+ 

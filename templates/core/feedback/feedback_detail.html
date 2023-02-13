@@ -2,30 +2,26 @@
 <div class="container vh-100">
   <div class="row">
     <div class="col-lg-6">
-      <div class="card">
-        <img class="card-img-top" src="{{profile.image.url}}" alt="" />
-      </div>
     </div>
     <div class="col-lg-6">
       <table class="table table-borderless table-hover">
         <tbody>
           <tr>
             <th>Name</th>
-            <td>{{profile.first_name}}{{profile.lastname_name}}</td>
+            <td>{{feedback.name}}</td>
           </tr>
           <tr>
-            <th>age</th>
-            <td>{{profile.age}}</td>
+            <th>email</th>
+            <td>{{feedback.email}}</td>
           </tr>
           <tr>
-            <th>Gender</th>
-            <td>{{profile.gender}}</td>
+            <th>subject</th>
+            <td>{{feedback.subject}}</td>
           </tr>
           <tr>
-            <th>Phone</th>
-            <td>{{profile.phone}}</td>
+            <th>message</th>
+            <td>{{feedback.message}}</td>
           </tr>
-          <a href="{% url 'account:password_change' %}">Change your password?</a>
         </tbody>
       </table>
     </div>
@@ -33,3 +29,4 @@
 </div>
 
 {% endblock %}
+
