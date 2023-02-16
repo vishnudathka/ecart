@@ -50,7 +50,7 @@
         <a class="border-0 py-2 px-3" href="{% url 'core:add_to_wishlist' product.id  %}"
           ><i class="fa-solid fa-heart me-2"></i>ADD TO WISH LIST</a
         >
-        <a class="border-0 py-2 px-1"
+        <a class="border-0 py-2 px-1"href="{% url 'core:review_list' product.id  %}"
           ><i class="fa-solid fa-user me-2"></i>USER REVIEWS</a
         >
         <a class="border-0 py-2 px-1" href="{% url 'core:review_create' product.id  %}"

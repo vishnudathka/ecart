@@ -60,7 +60,7 @@ class ProductModel(models.Model):
     unit = models.ForeignKey(UnitModel, on_delete=models.SET_NULL, null=True)
     category = models.ForeignKey(
         CategoryModel, on_delete=models.SET_NULL, null=True, blank=True
-    )
+    ) 
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.BooleanField(default=True)

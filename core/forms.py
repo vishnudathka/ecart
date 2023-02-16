@@ -20,7 +20,13 @@ class WishlistForm(forms.ModelForm):
 
     class Meta :
         model = models.WishlistModel
-        fields = ["name"]   
+        fields = ["name"] 
+
+class ProductImageForm(forms.ModelForm):
+
+    class Meta:
+        model =models.ProductImageModel
+        fields =["path"]              
 
 class Reviewform(forms.ModelForm):
 
@@ -28,9 +34,5 @@ class Reviewform(forms.ModelForm):
         model =models.ReviewModel
         fields =["comment","rating"]
 
-class ProductImageForm(forms.ModelForm):
-
-    class Meta:
-        model =models.ProductImageModel
-        fields =["path"]       
+   
 

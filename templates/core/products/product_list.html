@@ -4,16 +4,21 @@
 <div class="container product_list">
   <div class="row">
     <div class="col">
-      <div class="p-head-1">
-        <input
-          type="text"
+      <div class="">
+        <form class="d-flex p-head-1" method="get" action="{% url 'core:find_product' %}">
+          <input
+          type="search"
           class="search-p mt-2"
           placeholder="Type product name, category or anything here..."
+          aria-label="Search"
+          name="q"
         />
         <button class="btn btn-success s-button mb-2">
           <i class="fa-solid fa-magnifying-glass text-white me-2"></i>Find
           Products
         </button>
+        </form>
+       
       </div>
       <div
         class="d-md-flex align-items-center justify-content-between p-head-2"
@@ -45,10 +50,10 @@
           <a
             class="card-title"
             href="{% url 'core:product_detail' product.id %}"
-            ><h5>{{product.name}}</h5></a
+            ><h5>{{product.name|truncatewords:"10"}}</h5></a
           >
 
-          <p class="card-text mt-3">{{product.discription}}</p>
+          <p class="card-text mt-3">{{product.discription|truncatewords:"10"}}</p>
           <h5 class="card-text-1 my-3">INR{{product.price}}</h5>
           <h5 class="text-warning col d-flex mb-4">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i

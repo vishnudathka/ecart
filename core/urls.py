@@ -2,7 +2,7 @@ from django.urls import path
 from core import views
 
 app_name = "core"
-
+ 
 urlpatterns = [
     path("", views.HomeView.as_view(), name="home"),
     path("about/", views.AboutView.as_view(), name="about"),
@@ -10,6 +10,7 @@ urlpatterns = [
     path("products/", views.ProductListView.as_view(), name="product_list"),
     path("products/create/", views.ProctCreateView.as_view(), name="product_create"),
     path("products/<int:pk>/", views.ProductDetailView.as_view(), name="product_detail"),
+    path("products/find/", views.FindProductView.as_view(), name="find_product"),
     path("products/<int:pk>/update/", views.ProductUpdateView.as_view(), name="product_update"),
     path("products/<int:pk>/delete/", views.ProductDeleteView.as_view(), name="product_delete"),
     # feedback
@@ -22,8 +23,10 @@ urlpatterns = [
     #add to cart
     path("cart/add/product/<int:pk>/", views.AddToCartView.as_view(), name="add_to_cart"),
     #review
-    path("reviews/product/<int:pk>/add/", views.ReviewCreatView.as_view(), name="review_create"),
-    path("review/product/reviews", views.ReviewListView.as_view(), name="review_list"),
+    path("reviews/add/product/<int:pk>/", views.ReviewCreatView.as_view(), name="review_create"),
+    path("reviews/product/review/<int:pk>/", views.ReviewListView.as_view(), name="review_list"),
+
+  
         
 
 ]

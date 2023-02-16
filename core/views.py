@@ -266,11 +266,29 @@ class ReviewCreatView(views.CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update({"image_form": forms.ProductImageForm})
+        context.update({"image_form": forms.ProductImageForm,"product": models.ProductModel.objects.get(id=self.kwargs.get("pk"))})
         return context
 
 
 class ReviewListView(views.ListView):
     template_name = "core/review/review_list.html"
     model = models.ReviewModel
-    context_object_name = "reviews"
+    context_object_name = "reviews"  
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({"image_form": forms.ProductImageForm,"product": models.ProductModel.objects.get(id=self.kwargs.get("pk"))})
+        return context
+    
+class FindProductView(views.ListView):
+    template_name = "core/products/product_list.html"
+    model = models.ProductModel
+    context_object_name = "products"
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+        q = self.request.GET.get('q')
+        qs = qs.filter(name__icontains=q)
+        return qs
+
+       

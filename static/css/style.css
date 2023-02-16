@@ -148,6 +148,8 @@ width: 200px;
 .p-head-1 .s-button{
 height: 50px;
 border-radius: 15px;
+margin-top: 8px;
+margin-left: 8px;
 
 }
 
@@ -234,6 +236,11 @@ form .bg_wishlist{
   border-color: rgba(34, 34, 34, 0.8);
   color: rgba(34, 34, 34, 0.8)
   ;
+}
+
+/* review_create */
+.btn_review_create{
+  border-radius: 20px;
 }
 
  
