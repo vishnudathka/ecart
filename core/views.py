@@ -247,7 +247,6 @@ class AddToCartView(views.View):
 class ReviewCreatView(views.CreateView):
     template_name = "core/review/review_create.html"
     model = models.ReviewModel
-    success_url = reverse_lazy("core:review_list")
     form_class = forms.Reviewform
 
     def form_valid(self, form):
@@ -262,7 +261,10 @@ class ReviewCreatView(views.CreateView):
         review.images.set([image])
         review.save()
 
-        return redirect(self.success_url)
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy("core:review_list", kwargs={"pk": self.kwargs.get("pk")})    
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
